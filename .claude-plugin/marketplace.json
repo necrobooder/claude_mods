@@ -1,0 +1,11 @@
+{
+  "name": "claude_mods",
+  "owner": { "name": "necrobooder" },
+  "plugins": [
+    {
+      "name": "context-cockpit",
+      "source": "./context-cockpit",
+      "description": "A bar above the prompt for the desktop app: context gauge, compact with auto and smart compact, subagent tracker, prompt-cache management and plan-limit gauges."
+    }
+  ]
+}

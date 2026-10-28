@@ -1,0 +1,51 @@
+{
+  "name": "context-cockpit",
+  "version": "0.2.0",
+  "description": "A bar above the prompt for the desktop app: context gauge, compact button with auto and smart compact, subagent tracker and prompt-cache management.",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "autoCompactPercent": {
+      "type": "number",
+      "title": "Auto-compact at (%)",
+      "description": "Default context percentage that triggers an automatic compact. Editable live in the compaction settings.",
+      "default": 70
+    },
+    "smartMinPercent": {
+      "type": "number",
+      "title": "Smart compact only above (%)",
+      "description": "Default context fill below which smart compact does not run. Editable live in the compaction settings.",
+      "default": 30
+    },
+    "preColdCompactPercent": {
+      "type": "number",
+      "title": "Compact mode: only above (%)",
+      "description": "In cache mode Compact, the compact before the cache goes cold only runs when the context is at least this full.",
+      "default": 20
+    },
+    "cacheTtl": {
+      "type": "string",
+      "title": "Prompt-cache lifetime",
+      "description": "5m or 1h. Click the TTL in the bar to switch; a model switch also reports the real value.",
+      "default": "1h",
+      "options": ["5m", "1h"]
+    },
+    "leadSeconds": {
+      "type": "number",
+      "title": "Act this many seconds before the cache goes cold",
+      "description": "Ping and Compact cache modes fire this long before the cache lifetime ends.",
+      "default": 90
+    },
+    "pingMax": {
+      "type": "number",
+      "title": "Most pings per idle stretch",
+      "description": "Safety cap: after this many keep-alive pings in a row the cache is let go cold.",
+      "default": 12
+    },
+    "smartModel": {
+      "type": "string",
+      "title": "Model for the smart check",
+      "description": "Alias or id of the cheap model that judges whether the context is still needed.",
+      "default": "haiku"
+    }
+  }
+}
